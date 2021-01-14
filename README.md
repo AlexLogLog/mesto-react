@@ -11,5 +11,3 @@
 * HTML
 * CSS
 * React
-
-## Сайт расположен на странице (https://alexloglog.github.io/mesto-react/)
