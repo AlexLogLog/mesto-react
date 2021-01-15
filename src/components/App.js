@@ -8,59 +8,35 @@ import ProfilePopup from './ProfilePopup';
 import CardPopup from './CardPopup';
 import ImagePopup from './ImagePopup';
 
-import { api } from '../utils/Api';
 
 
 function App() {
 
-    const [isEditProfilePopupOpen, setEditProfilePopupOpen] = useState(false);
-    const [isAddPlacePopupOpen, setAddPlacePopupOpen] = useState(false);
-    const [isEditAvatarPopupOpen, setEditAvatarPopupOpen] = useState(false);
-    const [profileInfoAndAva, setInfoAndAva] = useState({});
-    const [cards, setCards] = useState([]);
+    const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
+    const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
+    const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
     const [selectedCard, setSelectedCard] = useState({
         open: false,
         link: '',
         name: '',
     });
-    React.useEffect(() => {
-        api
-            .getInfoAndAvatar()
-            .then((result) => {
-                setInfoAndAva(result);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }, []);
-
-    React.useEffect(() => {
-        api
-            .getCards()
-            .then((result) => {
-                setCards(result);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }, []);
 
     function handleEditAvatarClick() {
-        setEditAvatarPopupOpen(true);
+        setIsEditAvatarPopupOpen(true);
     }
 
     function handleEditProfileClick() {
-        setEditProfilePopupOpen(true);
+        setIsEditProfilePopupOpen(true);
     }
 
     function handleAddPlaceClick() {
-        setAddPlacePopupOpen(true);
+        setIsAddPlacePopupOpen(true);
     }
 
     function closeAllPopups() {
-        setEditProfilePopupOpen(false);
-        setEditAvatarPopupOpen(false);
-        setAddPlacePopupOpen(false);
+        setIsEditProfilePopupOpen(false);
+        setIsAddPlacePopupOpen(false);
+        setIsEditAvatarPopupOpen(false);
         setSelectedCard({
             open: false,
             link: '',
@@ -82,11 +58,9 @@ function App() {
         <div className="root">
             <Header />
             <Main
-                info={profileInfoAndAva}
                 onEditProfile={handleEditProfileClick}
                 onAddPlace={handleAddPlaceClick}
                 onEditAvatar={handleEditAvatarClick}
-                cards={cards}
                 onCardClick={handleCardClick}
             />
 

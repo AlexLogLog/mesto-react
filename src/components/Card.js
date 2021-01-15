@@ -11,6 +11,8 @@ function Card(props) {
         onCardClick(card);
       }
 
+
+
     return (
         <div className="card__id">
             <div className="card__element">

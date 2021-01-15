@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from './Card';
+import { api } from '../utils/api';
 
 function Main(props) {
 
@@ -7,10 +8,34 @@ function Main(props) {
     onEditProfile,
     onAddPlace,
     onEditAvatar,
-    info,
-    cards,
     onCardClick
   } = props;
+
+
+  const [profileInfoAndAva, setProfileInfoAndAva] = useState({});
+  const [cards, setCards] = useState([]);
+
+  React.useEffect(() => {
+      api
+          .getInfoAndAvatar()
+          .then((result) => {
+            setProfileInfoAndAva(result);
+          })
+          .catch((err) => {
+              console.log(err);
+          });
+  }, []);
+
+  React.useEffect(() => {
+      api
+          .getCards()
+          .then((result) => {
+              setCards(result);
+          })
+          .catch((err) => {
+              console.log(err);
+          });
+  }, []);
 
   return (
     <main>
@@ -19,15 +44,15 @@ function Main(props) {
         <div className="profile__list">
           <div className="profile__list-about">
             <div className="profile__icon" onClick={onEditAvatar}>
-              <img className="profile__image" src={info.avatar} alt="Аватар" />
+              <img className="profile__image" src={profileInfoAndAva.avatar} alt="Аватар" />
             </div>
 
             <div className="profile__all">
               <div className="profile__info">
-                <h1 className="profile__name">{info.name}</h1>
+                <h1 className="profile__name">{profileInfoAndAva.name}</h1>
                 <button className="profile__button-red" type="button" onClick={onEditProfile}></button>
               </div>
-              <p className="profile__about">{info.about}</p>
+              <p className="profile__about">{profileInfoAndAva.about}</p>
             </div>
           </div>
           <button className="profile__button-new" type="button" onClick={onAddPlace}></button>
@@ -38,8 +63,8 @@ function Main(props) {
 
       <section className="card">
 
-        {cards.map((card, i) => (
-          <Card key={i}
+        {cards.map((card) => (
+          <Card key={card._id}
             card={card}
             onCardClick={onCardClick}
           />
