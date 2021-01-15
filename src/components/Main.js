@@ -14,6 +14,10 @@ function Main(props) {
 
   const [profileInfoAndAva, setProfileInfoAndAva] = useState({});
   const [cards, setCards] = useState([]);
+  const userName = profileInfoAndAva.name;
+  const userDescription  = profileInfoAndAva.about;
+  const userAvatar = profileInfoAndAva.avatar;
+  
 
   React.useEffect(() => {
       api
@@ -44,15 +48,15 @@ function Main(props) {
         <div className="profile__list">
           <div className="profile__list-about">
             <div className="profile__icon" onClick={onEditAvatar}>
-              <img className="profile__image" src={profileInfoAndAva.avatar} alt="Аватар" />
+              <img className="profile__image" src={userAvatar} alt="Аватар" />
             </div>
 
             <div className="profile__all">
               <div className="profile__info">
-                <h1 className="profile__name">{profileInfoAndAva.name}</h1>
+                <h1 className="profile__name">{userName}</h1>
                 <button className="profile__button-red" type="button" onClick={onEditProfile}></button>
               </div>
-              <p className="profile__about">{profileInfoAndAva.about}</p>
+              <p className="profile__about">{userDescription}</p>
             </div>
           </div>
           <button className="profile__button-new" type="button" onClick={onAddPlace}></button>
