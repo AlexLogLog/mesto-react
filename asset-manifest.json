@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/AlexLogLog//mesto-reactstatic/css/main.b1cb8d25.chunk.css",
-    "main.js": "/AlexLogLog//mesto-reactstatic/js/main.c7c8e7c7.chunk.js",
-    "main.js.map": "/AlexLogLog//mesto-reactstatic/js/main.c7c8e7c7.chunk.js.map",
-    "runtime-main.js": "/AlexLogLog//mesto-reactstatic/js/runtime-main.80c52fbf.js",
-    "runtime-main.js.map": "/AlexLogLog//mesto-reactstatic/js/runtime-main.80c52fbf.js.map",
-    "static/js/2.f46f05dd.chunk.js": "/AlexLogLog//mesto-reactstatic/js/2.f46f05dd.chunk.js",
-    "static/js/2.f46f05dd.chunk.js.map": "/AlexLogLog//mesto-reactstatic/js/2.f46f05dd.chunk.js.map",
-    "static/js/3.deff9e5c.chunk.js": "/AlexLogLog//mesto-reactstatic/js/3.deff9e5c.chunk.js",
-    "static/js/3.deff9e5c.chunk.js.map": "/AlexLogLog//mesto-reactstatic/js/3.deff9e5c.chunk.js.map",
-    "index.html": "/AlexLogLog//mesto-reactindex.html",
-    "static/css/main.b1cb8d25.chunk.css.map": "/AlexLogLog//mesto-reactstatic/css/main.b1cb8d25.chunk.css.map",
-    "static/js/2.f46f05dd.chunk.js.LICENSE.txt": "/AlexLogLog//mesto-reactstatic/js/2.f46f05dd.chunk.js.LICENSE.txt",
-    "static/media/index.css": "/AlexLogLog//mesto-reactstatic/media/redact.a086f758.svg",
-    "static/media/logo.ff16f24b.svg": "/AlexLogLog//mesto-reactstatic/media/logo.ff16f24b.svg"
+    "main.css": "./static/css/main.ecc53a38.chunk.css",
+    "main.js": "./static/js/main.c7c8e7c7.chunk.js",
+    "main.js.map": "./static/js/main.c7c8e7c7.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.e117725f.js",
+    "runtime-main.js.map": "./static/js/runtime-main.e117725f.js.map",
+    "static/js/2.f46f05dd.chunk.js": "./static/js/2.f46f05dd.chunk.js",
+    "static/js/2.f46f05dd.chunk.js.map": "./static/js/2.f46f05dd.chunk.js.map",
+    "static/js/3.deff9e5c.chunk.js": "./static/js/3.deff9e5c.chunk.js",
+    "static/js/3.deff9e5c.chunk.js.map": "./static/js/3.deff9e5c.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.ecc53a38.chunk.css.map": "./static/css/main.ecc53a38.chunk.css.map",
+    "static/js/2.f46f05dd.chunk.js.LICENSE.txt": "./static/js/2.f46f05dd.chunk.js.LICENSE.txt",
+    "static/media/index.css": "./static/media/redact.a086f758.svg",
+    "static/media/logo.ff16f24b.svg": "./static/media/logo.ff16f24b.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.80c52fbf.js",
+    "static/js/runtime-main.e117725f.js",
     "static/js/2.f46f05dd.chunk.js",
-    "static/css/main.b1cb8d25.chunk.css",
+    "static/css/main.ecc53a38.chunk.css",
     "static/js/main.c7c8e7c7.chunk.js"
   ]
 }
