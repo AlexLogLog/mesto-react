@@ -23,7 +23,7 @@
     "type": "git",
     "url": "git+https://github.com/AlexLogLog/mesto-react.git"
   },
-  "homepage": "https://github.com/AlexLogLog//mesto-react#readme",
+  "homepage": "./",
   "eslintConfig": {
     "extends": [
       "react-app",
