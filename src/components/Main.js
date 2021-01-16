@@ -14,10 +14,7 @@ function Main(props) {
 
   const [profileInfoAndAva, setProfileInfoAndAva] = useState({});
   const [cards, setCards] = useState([]);
-  const userName = profileInfoAndAva.name;
-  const userDescription  = profileInfoAndAva.about;
-  const userAvatar = profileInfoAndAva.avatar;
-  
+  const {name: userName, about: userDescription, avatar: userAvatar} = profileInfoAndAva;
 
   React.useEffect(() => {
       api

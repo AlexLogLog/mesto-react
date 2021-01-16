@@ -4,6 +4,7 @@ class Api {
     this._headers = options.headers;
   }
 
+  
   _error(res) {
       if (res.ok) {
         return res.json();
