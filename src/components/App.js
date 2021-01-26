@@ -21,8 +21,8 @@ function App() {
         link: '',
         name: '',
     });
-    const [currentUser, setCurrentUser] = useState({});
-    const [currentCard, setCurrentCard] = useState([]);
+    const [currentUser, setCurrentUser] = useState({});    
+    const [cards, setCards] = useState([]);
 
     useEffect(() => {
         api
@@ -39,7 +39,7 @@ function App() {
         api
             .getCards()
             .then((result) => {
-                setCurrentCard(result);
+                setCards(result);
             })
             .catch((err) => {
                 console.log(err);
@@ -51,6 +51,9 @@ function App() {
             .then((result) => {
                 setCurrentUser(result);
             })
+            .catch((err) => {
+                console.log(err);
+            });
     }
 
     function handleUpdateAvatar(newInfo) {
@@ -58,14 +61,19 @@ function App() {
             .updateAvatar(newInfo)
             .then((result) => {
                 setCurrentUser(result);
+            })
+            .catch((err) => {
+                console.log(err);
             });
     }
 
     function handleAddPlaceSubmit(newCard) {
-        console.log(newCard);
         api.newCard(newCard)
             .then((result) => {
-                setCurrentCard([result, ...currentCard]);
+                setCards([result, ...cards]);
+            })
+            .catch((err) => {
+                console.log(err);
             });
     }
 
@@ -77,28 +85,40 @@ function App() {
             api
                 .countLikeApi(card)
                 .then((newCard) => {
-                    const newCards = currentCard.map((element) =>
+                    const newCards = cards.map((element) =>
                         element._id === card._id ? newCard : element);
-                    setCurrentCard(newCards);
+                        setCards(newCards);
+                })
+                .catch((err) => {
+                    console.log(err);
                 });
         } else {
 
             api
                 .deleteLike(card)
                 .then((newCard) => {
-                    const newCards = currentCard.map((element) =>
+                    const newCards = cards.map((element) =>
                         element._id === card._id ? newCard : element);
-                    setCurrentCard(newCards);
+                        setCards(newCards);
+                })
+                .catch((err) => {
+                    console.log(err);
                 })
         }
     }
 
     function handleCardDelete(card) {
-        api.deleteCard(card);
-        setCurrentCard(currentCard.filter((element) =>
-            element !== card
+        api
+            .deleteCard(card)
+            .then(() => {
+                setCards(cards.filter((element) =>
+                    element._id !== card._id
 
-        ));
+                ));
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
 
     function handleEditAvatarClick() {
@@ -140,7 +160,7 @@ function App() {
             <CurrentUserContext.Provider value={currentUser}>
                 <Main
                     onCardDelete={handleCardDelete}
-                    cards={currentCard}
+                    cards={cards}
                     onEditProfile={handleEditProfileClick}
                     onAddPlace={handleAddPlaceClick}
                     onEditAvatar={handleEditAvatarClick}
