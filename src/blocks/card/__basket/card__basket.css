@@ -17,7 +17,3 @@
     opacity: 0.6;
     cursor: pointer;
 }
-
-.card__basket_hidden {
-    visibility: hidden;
-}
