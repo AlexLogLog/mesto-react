@@ -68,7 +68,8 @@ function App() {
     }
 
     function handleAddPlaceSubmit(newCard) {
-        api.newCard(newCard)
+        api
+            .newCard(newCard)
             .then((result) => {
                 setCards([result, ...cards]);
             })
